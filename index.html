@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
+	<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next - Premium Hausmeister-Service | Professionelle Entrümpelung & Hausmeisterdienstleistungen</title>
@@ -74,7 +74,7 @@
     
     <style>
         * {
-            margin: 0;
+				margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
@@ -104,64 +104,6 @@
             font-weight: 500;
         }
         
-        /* Loading Animation */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loading-logo {
-            width: 80px;
-            height: 80px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Particle Background */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
-        }
         
         /* Header */
         .header {
@@ -266,26 +208,6 @@
             align-items: center;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
-        
-        @keyframes backgroundShift {
-            0%, 100% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-10px) translateY(-5px); }
-            50% { transform: translateX(5px) translateY(-10px); }
-            75% { transform: translateX(-5px) translateY(5px); }
-        }
         
         .hero-content {
             max-width: 800px;
@@ -328,17 +250,17 @@
             gap: 10px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
+				position: relative;
+				overflow: hidden;
         }
         
         .btn::before {
             content: '';
-            position: absolute;
-            top: 0;
+				position: absolute;
+				top: 0;
             left: -100%;
-            width: 100%;
-            height: 100%;
+				width: 100%;
+				height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
@@ -428,12 +350,12 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.02) 100%);
-            opacity: 0;
+				opacity: 0;
             transition: opacity 0.3s ease;
-        }
-        
+			}
+
         .service-card:hover::before {
-            opacity: 1;
+				opacity: 1;
         }
         
         .service-card:hover {
@@ -489,7 +411,7 @@
         
         .about-text h2 {
             font-size: 2.5rem;
-            font-weight: 700;
+				font-weight: 700;
             margin-bottom: 1.5rem;
             color: #1a1a1a;
         }
@@ -547,7 +469,7 @@
         
         .contact-info h2 {
             font-size: 2.5rem;
-            font-weight: 700;
+				font-weight: 700;
             margin-bottom: 1.5rem;
             color: white;
         }
@@ -609,7 +531,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+					font-weight: 500;
         }
         
         .form-group input,
@@ -622,7 +544,7 @@
             background: rgba(255,255,255,0.15);
             color: white;
             font-size: 1rem;
-            font-weight: 500;
+					font-weight: 500;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
@@ -630,7 +552,7 @@
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255,255,255,0.7);
-            font-weight: 400;
+					font-weight: 400;
         }
         
         .form-group input:focus,
@@ -653,7 +575,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+					font-weight: 600;
             color: white;
             font-size: 1rem;
         }
@@ -679,13 +601,13 @@
             background: #0f0f0f;
             color: #999;
             padding: 2rem 0;
-            text-align: center;
-        }
-        
+					text-align: center;
+				}
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
-                display: none;
+					display: none;
             }
             
             .mobile-menu {
@@ -720,281 +642,6 @@
             }
         }
         
-        /* Advanced Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .slide-in-right {
-            animation: slideInRight 0.8s ease-out;
-        }
-        
-        .scale-in {
-            animation: scaleIn 0.6s ease-out;
-        }
-        
-        /* Parallax Effect */
-        .parallax-element {
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        /* Magnetic Hover Effect */
-        .magnetic {
-            transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-        }
-        
-        /* Glitch Effect */
-        .glitch {
-            position: relative;
-        }
-        
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-        }
-        
-        .glitch::before {
-            animation: glitch-1 0.5s infinite;
-            color: #ff0000;
-            z-index: -1;
-        }
-        
-        .glitch::after {
-            animation: glitch-2 0.5s infinite;
-            color: #00ff00;
-            z-index: -2;
-        }
-        
-        @keyframes glitch-1 {
-            0%, 14%, 15%, 49%, 50%, 99%, 100% {
-                transform: translate(0);
-            }
-            15%, 49% {
-                transform: translate(-2px, 2px);
-            }
-        }
-        
-        @keyframes glitch-2 {
-            0%, 20%, 21%, 62%, 63%, 99%, 100% {
-                transform: translate(0);
-            }
-            21%, 62% {
-                transform: translate(2px, -2px);
-            }
-        }
-        
-        /* Neon Glow Effect */
-        .neon-glow {
-            text-shadow: 
-                0 0 5px #5236cc,
-                0 0 10px #5236cc,
-                0 0 15px #5236cc,
-                0 0 20px #5236cc;
-            animation: neon-flicker 2s infinite alternate;
-        }
-        
-        @keyframes neon-flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 
-                    0 0 5px #5236cc,
-                    0 0 10px #5236cc,
-                    0 0 15px #5236cc,
-                    0 0 20px #5236cc;
-            }
-            20%, 24%, 55% {
-                text-shadow: none;
-            }
-        }
-        
-        /* Liquid Button Effect */
-        .liquid-btn {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(45deg, #5236cc, #0693e3);
-        }
-        
-        .liquid-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-        
-        .liquid-btn:hover::before {
-            left: 100%;
-        }
-        
-        /* Morphing Background */
-        .morphing-bg {
-            background: linear-gradient(-45deg, #1a1a1a, #2d2d2d, #1a1a1a, #333);
-            background-size: 400% 400%;
-            animation: morphing 15s ease infinite;
-        }
-        
-        @keyframes morphing {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Text Reveal Animation */
-        .text-reveal {
-            overflow: hidden;
-        }
-        
-        .text-reveal span {
-            display: inline-block;
-            transform: translateY(100%);
-            animation: textReveal 0.8s ease forwards;
-        }
-        
-        @keyframes textReveal {
-            to {
-                transform: translateY(0);
-            }
-        }
-        
-        /* 3D Card Flip */
-        .card-3d {
-            perspective: 1000px;
-        }
-        
-        .card-3d-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        
-        .card-3d:hover .card-3d-inner {
-            transform: rotateY(180deg);
-        }
-        
-        .card-3d-front, .card-3d-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-        
-        .card-3d-back {
-            transform: rotateY(180deg);
-        }
-        
-        /* Cursor Trail Effect */
-        .cursor-trail {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #5236cc, transparent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            animation: cursorTrail 0.3s ease-out;
-        }
-        
-        @keyframes cursorTrail {
-            0% {
-                transform: scale(0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-        
-        /* Matrix Rain Effect */
-        .matrix-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .matrix-char {
-            position: absolute;
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            animation: matrixFall linear infinite;
-        }
-        
-        @keyframes matrixFall {
-            0% {
-                transform: translateY(-100vh);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
         
         /* Smooth scrolling */
         html {
@@ -1003,13 +650,6 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-logo"></div>
-    </div>
-    
-    <!-- Particle Background -->
-    <div class="particles" id="particles"></div>
     
     <!-- Header -->
     <header class="header">
@@ -1044,15 +684,15 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content fade-in-up">
-            <h1 class="neon-glow text-reveal">Ihr zuverlässiger Hausmeister-Service</h1>
-            <p class="text-reveal">Professionelle Entrümpelung, Gartenpflege, Winterdienste und Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung mit besenfreier Übergabe.</p>
+        <div class="hero-content">
+            <h1>Ihr zuverlässiger Hausmeister-Service</h1>
+            <p>Professionelle Entrümpelung, Gartenpflege, Winterdienste und Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung mit besenfreier Übergabe.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary liquid-btn magnetic">
+                <a href="#contact" class="btn btn-primary">
                     <i class="fas fa-phone"></i>
                     Jetzt anrufen
                 </a>
-                <a href="#services" class="btn btn-secondary magnetic">
+                <a href="#services" class="btn btn-secondary">
                     <i class="fas fa-info-circle"></i>
                     Services ansehen
                 </a>
@@ -1069,7 +709,7 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-trash-alt"></i>
                     </div>
@@ -1081,7 +721,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
@@ -1092,7 +732,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-snowflake"></i>
                     </div>
@@ -1104,7 +744,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
@@ -1116,7 +756,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-broom"></i>
                     </div>
@@ -1127,7 +767,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card fade-in-up">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-recycle"></i>
                     </div>
@@ -1146,7 +786,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text slide-in-left">
+                <div class="about-text">
                     <h2>Über Next</h2>
                     <p class="premium-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: #333;">Next ist Ihr Premium-Partner für alle Hausmeisterdienstleistungen. Mit jahrelanger Erfahrung und einem professionellen Team sorgen wir dafür, dass Ihr Zuhause oder Geschäft immer in bestem Zustand ist.</p>
                     <p style="margin-bottom: 2rem;">Wir verstehen, dass jeder Kunde individuelle Bedürfnisse hat. Deshalb bieten wir maßgeschneiderte Lösungen für alle Ihre Anforderungen.</p>
@@ -1189,7 +829,7 @@
                     </div>
                 </div>
                 
-                <div class="about-image slide-in-right scale-in">
+                <div class="about-image">
                     <i class="fas fa-home"></i>
                 </div>
             </div>
@@ -1409,28 +1049,6 @@
     </footer>
 
     <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-            }, 1500);
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
@@ -1541,200 +1159,6 @@
             });
         });
 
-        // Advanced scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
-                    
-                    // Add staggered animation for service cards
-                    if (entry.target.classList.contains('service-card')) {
-                        const cards = document.querySelectorAll('.service-card');
-                        const index = Array.from(cards).indexOf(entry.target);
-                        entry.target.style.animationDelay = (index * 0.1) + 's';
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.service-card, .about-text, .about-image, .contact-info, .contact-form').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            observer.observe(element);
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const rate = scrolled * -0.5;
-            
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-        });
-
-        // Button hover effects
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.05)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Service card hover effects
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.03)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Initialize particles
-        createParticles();
-
-        // Add typing effect to hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect after page load
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const heroTitle = document.querySelector('.hero h1');
-                if (heroTitle) {
-                    const originalText = heroTitle.textContent;
-                    typeWriter(heroTitle, originalText, 50);
-                }
-            }, 2000);
-        });
-        
-        // Magnetic Effect for Buttons
-        document.querySelectorAll('.magnetic').forEach(element => {
-            element.addEventListener('mousemove', function(e) {
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.transform = 'translate(0, 0)';
-            });
-        });
-        
-        // Cursor Trail Effect
-        let cursorTrails = [];
-        document.addEventListener('mousemove', function(e) {
-            if (Math.random() > 0.7) { // Only create trail sometimes
-                const trail = document.createElement('div');
-                trail.className = 'cursor-trail';
-                trail.style.left = e.clientX + 'px';
-                trail.style.top = e.clientY + 'px';
-                document.body.appendChild(trail);
-                
-                cursorTrails.push(trail);
-                
-                setTimeout(() => {
-                    trail.remove();
-                    cursorTrails = cursorTrails.filter(t => t !== trail);
-                }, 300);
-            }
-        });
-        
-        // Matrix Rain Effect
-        function createMatrixRain() {
-            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            const matrixContainer = document.createElement('div');
-            matrixContainer.className = 'matrix-rain';
-            document.body.appendChild(matrixContainer);
-            
-            function createMatrixColumn() {
-                const column = document.createElement('div');
-                column.style.position = 'absolute';
-                column.style.left = Math.random() * window.innerWidth + 'px';
-                column.style.top = '-50px';
-                
-                for (let i = 0; i < 20; i++) {
-                    const char = document.createElement('div');
-                    char.className = 'matrix-char';
-                    char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                    char.style.animationDelay = (i * 0.1) + 's';
-                    char.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                    column.appendChild(char);
-                }
-                
-                matrixContainer.appendChild(column);
-                
-                setTimeout(() => {
-                    column.remove();
-                }, 5000);
-            }
-            
-            setInterval(createMatrixColumn, 200);
-        }
-        
-        // Initialize Matrix Rain (optional - can be toggled)
-        // createMatrixRain();
-        
-        // Text Reveal Animation
-        function animateTextReveal() {
-            document.querySelectorAll('.text-reveal').forEach(element => {
-                const text = element.textContent;
-                element.innerHTML = '';
-                
-                for (let i = 0; i < text.length; i++) {
-                    const span = document.createElement('span');
-                    span.textContent = text[i];
-                    span.style.animationDelay = (i * 0.05) + 's';
-                    element.appendChild(span);
-                }
-            });
-        }
-        
-        // Initialize text reveal
-        animateTextReveal();
-        
-        // Glitch Effect (on hover)
-        document.querySelectorAll('.glitch').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.animation = 'glitch-1 0.5s infinite';
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.animation = 'none';
-            });
-        });
-        
-        // Morphing Background
-        document.querySelectorAll('.morphing-bg').forEach(element => {
-            element.style.animation = 'morphing 15s ease infinite';
-        });
-    </script>
+		</script>
 </body>
 </html>
