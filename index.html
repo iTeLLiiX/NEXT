@@ -325,14 +325,14 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
         .service-card {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             text-align: center;
@@ -340,7 +340,9 @@
             border: 1px solid #e9ecef;
             position: relative;
             overflow: hidden;
-            min-height: 400px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card::before {
@@ -1082,6 +1084,46 @@
             transform: translateY(-2px);
         }
         
+        /* Service Images */
+        .service-image {
+            margin: 1rem 0;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #6c757d;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .image-placeholder:hover {
+            border-color: #1a1a1a;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+        }
+        
+        .image-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        
+        .image-placeholder span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
         /* Before/After Slider */
         .before-after-container {
             position: relative;
@@ -1249,6 +1291,12 @@
                             </div>
                             <h3>Entrümpelung</h3>
                             <p>Professionelle Entrümpelung von Wohnungen, Häusern und Kellern. Wir sorgen für eine saubere und ordentliche Umgebung.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-home"></i>
+                                    <span>Vorher/Nachher</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
@@ -1286,6 +1334,12 @@
                             </div>
                             <h3>Gartenpflege</h3>
                             <p>Komplette Gartenpflege von der Rasenpflege bis zur Baumpflege. Ihr Garten wird zum Blickfang.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-seedling"></i>
+                                    <span>Gartenarbeit</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
@@ -1323,6 +1377,12 @@
                             </div>
                             <h3>Winterdienste</h3>
                             <p>Zuverlässiger Schneeräumdienst für Privatpersonen. Sicherheit im Winter garantiert.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-snowplow"></i>
+                                    <span>Schneeräumung</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
@@ -1360,6 +1420,12 @@
                             </div>
                             <h3>Kleine Reparaturen</h3>
                             <p>Kleine Reparaturen und Wartungsarbeiten im Rahmen der Hausmeisterdienstleistungen.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-hammer"></i>
+                                    <span>Reparaturen</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
@@ -1397,6 +1463,12 @@
                             </div>
                             <h3>Reinigung</h3>
                             <p>Gründliche Reinigung von Innen- und Außenbereichen. Für ein sauberes und gepflegtes Zuhause.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-spray-can"></i>
+                                    <span>Reinigung</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
@@ -1434,6 +1506,12 @@
                             </div>
                             <h3>Entsorgung</h3>
                             <p>Fachgerechte Entsorgung von Möbeln und Sperrmüll im Rahmen der Entrümpelung.</p>
+                            <div class="service-image">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-dumpster"></i>
+                                    <span>Entsorgung</span>
+                                </div>
+                            </div>
                             <div class="flip-hint">
                                 <i class="fas fa-hand-pointer"></i> Für Details klicken
                             </div>
