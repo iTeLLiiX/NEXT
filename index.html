@@ -613,25 +613,65 @@
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.15);
             color: white;
             font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
         
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #999;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
         }
         
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: white;
+            border-color: #5236cc;
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 20px rgba(82, 54, 204, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .form-group input:hover,
+        .form-group textarea:hover,
+        .form-group select:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 15px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 45px;
+        }
+        
+        .form-group select option {
+            background: #1a1a1a;
+            color: white;
+            padding: 10px;
         }
         
         /* Footer */
@@ -1014,7 +1054,7 @@
                         
                         <div class="form-group">
                             <label for="service">Gewünschter Service *</label>
-                            <select id="service" name="service" required style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                            <select id="service" name="service" required>
                                 <option value="">-- Bitte wählen --</option>
                                 <option value="entruempelung">🗑️ Entrümpelung (Hauptservice)</option>
                                 <option value="entruempelung-reinigung">🧹 Entrümpelung + Reinigung (Aufpreis)</option>
@@ -1029,7 +1069,7 @@
                         
                         <div class="form-group">
                             <label for="urgency">Dringlichkeit</label>
-                            <select id="urgency" name="urgency" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                            <select id="urgency" name="urgency">
                                 <option value="normal">Normal (1-2 Wochen)</option>
                                 <option value="dringend">Dringend (3-5 Tage)</option>
                                 <option value="notfall">Notfall (sofort)</option>
@@ -1038,7 +1078,7 @@
                         
                         <div class="form-group">
                             <label for="property-type">Art der Immobilie</label>
-                            <select id="property-type" name="property-type" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                            <select id="property-type" name="property-type">
                                 <option value="">-- Bitte wählen --</option>
                                 <option value="wohnung">Wohnung</option>
                                 <option value="haus">Haus</option>
@@ -1052,7 +1092,7 @@
                         
                         <div class="form-group">
                             <label for="size">Geschätzte Größe</label>
-                            <select id="size" name="size" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                            <select id="size" name="size">
                                 <option value="">-- Bitte wählen --</option>
                                 <option value="klein">Klein (bis 50m²)</option>
                                 <option value="mittel">Mittel (50-100m²)</option>
@@ -1066,9 +1106,9 @@
                             <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie Ihr Anliegen detailliert..." required></textarea>
                         </div>
                         
-                        <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                            <input type="checkbox" id="privacy" name="privacy" required style="width: auto;">
-                            <label for="privacy" style="font-size: 0.9rem; margin: 0;">Ich stimme der Verarbeitung meiner Daten zu *</label>
+                        <div class="form-group" style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                            <input type="checkbox" id="privacy" name="privacy" required style="width: 20px; height: 20px; accent-color: #5236cc; cursor: pointer;">
+                            <label for="privacy" style="font-size: 0.95rem; margin: 0; color: white; cursor: pointer; line-height: 1.4;">Ich stimme der Verarbeitung meiner Daten zu *</label>
                         </div>
                         
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
