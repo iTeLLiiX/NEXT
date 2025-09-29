@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next - Premium Hausmeister-Service | Professionelle Entrümpelung & Hausmeisterdienstleistungen</title>
+    <meta name="description" content="Next - Ihr Premium-Partner für professionelle Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung, Gartenpflege, Winterdienste und alle Hausmeisterarbeiten. Zertifiziert, versichert und zuverlässig.">
+    <meta name="keywords" content="Hausmeister, Entrümpelung, Gartenpflege, Winterdienst, Hausmeisterdienstleistungen, professionell, zertifiziert, Saarland">
+    <meta name="author" content="Next Hausmeister-Service">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <meta name="geo.region" content="DE-SL">
+    <meta name="geo.placename" content="Saarland">
+    <meta name="geo.position" content="49.2401;6.9969">
+    <meta name="ICBM" content="49.2401, 6.9969">
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Next Hausmeister-Service",
+        "description": "Professioneller Hausmeister-Service für Entrümpelung, Gartenpflege und Winterdienste",
+        "url": "https://next-hausmeister.de",
+        "telephone": "+491623504163",
+        "email": "nextservice@online.de",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Saarland",
+            "addressCountry": "DE"
+        },
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.2401,
+                "longitude": 6.9969
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Hausmeisterdienstleistungen",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Entrümpelung"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Gartenpflege"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Winterdienst"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Premium Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .premium-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo svg {
+            height: 40px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover::before {
+            width: 80%;
+        }
+        
+        .nav-menu a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-5px); }
+            50% { transform: translateX(5px) translateY(-10px); }
+            75% { transform: translateX(-5px) translateY(5px); }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .service-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .service-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: #333;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        
+        .feature i {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+        }
+        
+        .about-image {
+            background: #1a1a1a;
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: white;
+            width: 30px;
+        }
+        
+        .contact-method div h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .contact-method div p {
+            color: #cccccc;
+            margin: 0;
+        }
+        
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f0f0f;
+            color: #999;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Advanced Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.6s ease-out;
+        }
+        
+        /* Parallax Effect */
+        .parallax-element {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo"></div>
+    </div>
+    
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Three horizontal lines on the left - exactly like in the image -->
+                    <rect x="5" y="8" width="12" height="2" fill="white" rx="1"/>
+                    <rect x="5" y="18" width="12" height="2" fill="white" rx="1"/>
+                    <rect x="5" y="28" width="12" height="2" fill="white" rx="1"/>
+                    
+                    <!-- NEXT text in simple, clean font -->
+                    <text x="30" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start" dominant-baseline="middle">NEXT</text>
+                </svg>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Start</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#impressum">Impressum</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>Ihr zuverlässiger Hausmeister-Service</h1>
+            <p>Professionelle Entrümpelung, Gartenpflege, Winterdienste und Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung mit besenfreier Übergabe.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Jetzt anrufen
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Services ansehen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unsere Services</h2>
+                <p>Wir bieten umfassende Hausmeisterdienstleistungen für Ihr Zuhause oder Geschäft</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3>Entrümpelung</h3>
+                    <p>Professionelle Entrümpelung von Wohnungen, Häusern und Kellern. Wir sorgen für eine saubere und ordentliche Umgebung.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Entsorgung, Besenfreie Übergabe<br>
+                        <strong>Optional:</strong> Besenfreie Reinigung oder Tiefenreinigung (Aufpreis)
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Gartenpflege</h3>
+                    <p>Komplette Gartenpflege von der Rasenpflege bis zur Baumpflege. Ihr Garten wird zum Blickfang.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Rasenpflege, Heckenschnitt, Baumpflege
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Winterdienste</h3>
+                    <p>Zuverlässiger Schneeräumdienst für Privatpersonen. Sicherheit im Winter garantiert.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Schneeräumung, Privatkunden<br>
+                        <strong>Hinweis:</strong> Nur für Privatpersonen
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Kleine Reparaturen</h3>
+                    <p>Kleine Reparaturen und Wartungsarbeiten im Rahmen der Hausmeisterdienstleistungen.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Kleine Reparaturen, Wartungsarbeiten<br>
+                        <strong>Hinweis:</strong> Nur kleine Reparaturen
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Reinigung</h3>
+                    <p>Gründliche Reinigung von Innen- und Außenbereichen. Für ein sauberes und gepflegtes Zuhause.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Grundreinigung, Fensterreinigung, Fassadenreinigung
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Entsorgung</h3>
+                    <p>Fachgerechte Entsorgung von Möbeln und Sperrmüll im Rahmen der Entrümpelung.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Inklusive:</strong> Sperrmüll, Recycling, Entsorgung<br>
+                        <strong>Hinweis:</strong> Nur im Rahmen der Entrümpelung
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h2>Über Next</h2>
+                    <p class="premium-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: #333;">Next ist Ihr Premium-Partner für alle Hausmeisterdienstleistungen. Mit jahrelanger Erfahrung und einem professionellen Team sorgen wir dafür, dass Ihr Zuhause oder Geschäft immer in bestem Zustand ist.</p>
+                    <p style="margin-bottom: 2rem;">Wir verstehen, dass jeder Kunde individuelle Bedürfnisse hat. Deshalb bieten wir maßgeschneiderte Lösungen für alle Ihre Anforderungen.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-certificate" style="color: #1a1a1a;"></i>
+                            <span><strong>Zertifiziert und versichert</strong><br><small>Haftpflicht & Betriebshaftpflicht</small></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock" style="color: #1a1a1a;"></i>
+                            <span><strong>24/7 Notfallservice</strong><br><small>Immer für Sie da</small></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-euro-sign" style="color: #1a1a1a;"></i>
+                            <span><strong>Transparente Preise</strong><br><small>Keine versteckten Kosten</small></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake" style="color: #1a1a1a;"></i>
+                            <span><strong>Zufriedenheitsgarantie</strong><br><small>100% Qualität oder Geld zurück</small></span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #1a1a1a;">
+                        <h4 style="color: #1a1a1a; margin-bottom: 1rem;">Unsere Zertifizierungen</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-shield-alt" style="color: #28a745;"></i>
+                                <span style="font-size: 0.9rem;"><strong>Haftpflichtversichert</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-award" style="color: #ffc107;"></i>
+                                <span style="font-size: 0.9rem;"><strong>Zertifiziert</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-leaf" style="color: #28a745;"></i>
+                                <span style="font-size: 0.9rem;"><strong>Umweltfreundlich</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image slide-in-right scale-in">
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Kontaktieren Sie uns</h2>
+                    <p>Benötigen Sie unsere Dienstleistungen? Kontaktieren Sie uns für ein kostenloses Angebot. Wir sind für Sie da!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p>+49 (0) 162 350 4163</p>
+                                <small>Mo-Fr: 8:00-18:00 Uhr, Sa: 9:00-15:00 Uhr</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-Mail</h4>
+                                <p>nextservice@online.de</p>
+                                <small>Antwort innerhalb von 24h</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Servicegebiet</h4>
+                                <p>Saarland & Umgebung</p>
+                                <small>Hausmeisterdienstleistungen & Entrümpelung</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Versicherung</h4>
+                                <p>Vollversichert & zertifiziert</p>
+                                <small>Haftpflicht & Betriebshaftpflicht</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem; color: white;">Kontaktformular</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+49 (0) 123 456 789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Gewünschter Service</label>
+                            <select id="service" name="service" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                                <option value="">Bitte wählen</option>
+                                <option value="entruempelung">Entrümpelung</option>
+                                <option value="gartenpflege">Gartenpflege</option>
+                                <option value="winterdienst">Winterdienst</option>
+                                <option value="reparaturen">Reparaturen</option>
+                                <option value="reinigung">Reinigung</option>
+                                <option value="transport">Transport & Entsorgung</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie Ihr Anliegen..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impressum Section -->
+    <section id="impressum" class="impressum" style="padding: 80px 0; background: #f8f9fa; color: #333;">
+        <div class="container">
+            <div class="impressum-content" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; color: #1a1a1a;">Impressum</h2>
+                
+                <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);">
+                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.5rem;">Angaben gemäß § 5 TMG</h3>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 0.5rem; font-weight: 600;">Next Hausmeister-Service</h4>
+                        <p style="margin-bottom: 0.5rem;"><strong>Inhaber:</strong> Abi Haidari</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Telefon:</strong> +49 (0) 162 350 4163</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>E-Mail:</strong> nextservice@online.de</p>
+                        <p style="margin-bottom: 1rem;"><strong>Servicegebiet:</strong> Saarland und Umgebung</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Umsatzsteuer-ID</h4>
+                        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE123456789</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h4>
+                        <p>Abi Haidari<br>
+                        Next Hausmeister-Service<br>
+                        Saarland, Deutschland</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Haftung für Inhalte</h4>
+                        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Haftung für Links</h4>
+                        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Urheberrecht</h4>
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Datenschutz</h4>
+                        <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Streitschlichtung</h4>
+                        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: #1a1a1a; text-decoration: underline;">https://ec.europa.eu/consumers/odr/</a><br>
+                        Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: #333; margin-bottom: 1rem; font-weight: 600;">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h4>
+                        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p>&copy; 2024 Next - Hausmeister-Service. Alle Rechte vorbehalten.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#impressum" style="color: #999; text-decoration: none; transition: color 0.3s ease;">Impressum</a>
+                    <a href="#datenschutz" style="color: #999; text-decoration: none; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="#agb" style="color: #999; text-decoration: none; transition: color 0.3s ease;">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with animation
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            const spans = this.querySelectorAll('span');
+            
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+                spans[0].style.transform = 'rotate(0deg) translate(0, 0)';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'rotate(0deg) translate(0, 0)';
+            } else {
+                navMenu.style.display = 'flex';
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            }
+        });
+
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission with animation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Gesendet!';
+                submitBtn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Advanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+                    
+                    // Add staggered animation for service cards
+                    if (entry.target.classList.contains('service-card')) {
+                        const cards = document.querySelectorAll('.service-card');
+                        const index = Array.from(cards).indexOf(entry.target);
+                        entry.target.style.animationDelay = (index * 0.1) + 's';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .about-text, .about-image, .contact-info, .contact-form').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            observer.observe(element);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.03)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize particles
+        createParticles();
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    const originalText = heroTitle.textContent;
+                    typeWriter(heroTitle, originalText, 50);
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
