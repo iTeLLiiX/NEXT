@@ -1767,6 +1767,21 @@
             });
         }
         
+        // Typing Effect for Hero Title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        
         // Initialize all effects
         document.addEventListener('DOMContentLoaded', function() {
             // Add scroll progress indicator
@@ -1790,6 +1805,15 @@
                 const scrolled = (winScroll / height) * 100;
                 progressBar.style.width = scrolled + '%';
             });
+            
+            // Initialize typing effect for hero title
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    const originalText = heroTitle.textContent;
+                    typeWriter(heroTitle, originalText, 80);
+                }
+            }, 1000);
         });
 
 		</script>
