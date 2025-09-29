@@ -996,44 +996,84 @@
                 
                 <div class="contact-form">
                     <h3 style="margin-bottom: 1.5rem; color: white;">Kontaktformular</h3>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Ihr vollständiger Name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">E-Mail</label>
+                            <label for="email">E-Mail *</label>
                             <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+49 (0) 123 456 789">
+                            <input type="tel" id="phone" name="phone" placeholder="+49 (0) 162 350 4163">
                         </div>
                         
                         <div class="form-group">
-                            <label for="service">Gewünschter Service</label>
-                            <select id="service" name="service" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
-                                <option value="">Bitte wählen</option>
-                                <option value="entruempelung">Entrümpelung</option>
-                                <option value="gartenpflege">Gartenpflege</option>
-                                <option value="winterdienst">Winterdienst</option>
-                                <option value="reparaturen">Reparaturen</option>
-                                <option value="reinigung">Reinigung</option>
-                                <option value="transport">Transport & Entsorgung</option>
+                            <label for="service">Gewünschter Service *</label>
+                            <select id="service" name="service" required style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                                <option value="">-- Bitte wählen --</option>
+                                <option value="entruempelung">🗑️ Entrümpelung (Hauptservice)</option>
+                                <option value="entruempelung-reinigung">🧹 Entrümpelung + Reinigung (Aufpreis)</option>
+                                <option value="gartenpflege">🍃 Gartenpflege</option>
+                                <option value="winterdienst-privat">❄️ Winterdienst (Privatpersonen)</option>
+                                <option value="kleine-reparaturen">🔧 Kleine Reparaturen</option>
+                                <option value="reinigung">🧽 Reinigung</option>
+                                <option value="entsorgung">♻️ Entsorgung (bei Entrümpelung)</option>
+                                <option value="sonstiges">❓ Sonstiges</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency">Dringlichkeit</label>
+                            <select id="urgency" name="urgency" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                                <option value="normal">Normal (1-2 Wochen)</option>
+                                <option value="dringend">Dringend (3-5 Tage)</option>
+                                <option value="notfall">Notfall (sofort)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="property-type">Art der Immobilie</label>
+                            <select id="property-type" name="property-type" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                                <option value="">-- Bitte wählen --</option>
+                                <option value="wohnung">Wohnung</option>
+                                <option value="haus">Haus</option>
+                                <option value="keller">Keller</option>
+                                <option value="dachboden">Dachboden</option>
+                                <option value="garage">Garage</option>
+                                <option value="buero">Büro/Geschäft</option>
                                 <option value="sonstiges">Sonstiges</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Nachricht</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie Ihr Anliegen..." required></textarea>
+                            <label for="size">Geschätzte Größe</label>
+                            <select id="size" name="size" style="width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
+                                <option value="">-- Bitte wählen --</option>
+                                <option value="klein">Klein (bis 50m²)</option>
+                                <option value="mittel">Mittel (50-100m²)</option>
+                                <option value="gross">Groß (100-200m²)</option>
+                                <option value="sehr-gross">Sehr groß (über 200m²)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie Ihr Anliegen detailliert..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <input type="checkbox" id="privacy" name="privacy" required style="width: auto;">
+                            <label for="privacy" style="font-size: 0.9rem; margin: 0;">Ich stimme der Verarbeitung meiner Daten zu *</label>
                         </div>
                         
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i>
-                            Nachricht senden
+                            Kostenloses Angebot anfordern
                         </button>
                     </form>
                 </div>
@@ -1188,26 +1228,68 @@
             });
         });
 
-        // Form submission with animation
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Enhanced form submission with validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
+            // Validate required fields
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = 'rgba(255,255,255,0.2)';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Bitte füllen Sie alle Pflichtfelder aus.');
+                return;
+            }
+            
+            // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
             submitBtn.disabled = true;
             
+            // Simulate form processing
             setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Gesendet!';
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Angebot angefordert!';
                 submitBtn.style.background = '#28a745';
+                
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = 'background: #28a745; color: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;';
+                successMsg.innerHTML = '✅ Vielen Dank! Wir melden uns innerhalb von 24h bei Ihnen.';
+                this.appendChild(successMsg);
                 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                     submitBtn.style.background = '';
+                    successMsg.remove();
                     this.reset();
-                }, 2000);
-            }, 1500);
+                }, 3000);
+            }, 2000);
+        });
+        
+        // Real-time form validation
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#ff6b6b';
+                } else {
+                    this.style.borderColor = 'rgba(255,255,255,0.2)';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                this.style.borderColor = 'rgba(255,255,255,0.2)';
+            });
         });
 
         // Advanced scroll animations
