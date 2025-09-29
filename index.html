@@ -787,6 +787,215 @@
             will-change: transform;
         }
         
+        /* Magnetic Hover Effect */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #00ff00;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 14%, 15%, 49%, 50%, 99%, 100% {
+                transform: translate(0);
+            }
+            15%, 49% {
+                transform: translate(-2px, 2px);
+            }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 20%, 21%, 62%, 63%, 99%, 100% {
+                transform: translate(0);
+            }
+            21%, 62% {
+                transform: translate(2px, -2px);
+            }
+        }
+        
+        /* Neon Glow Effect */
+        .neon-glow {
+            text-shadow: 
+                0 0 5px #5236cc,
+                0 0 10px #5236cc,
+                0 0 15px #5236cc,
+                0 0 20px #5236cc;
+            animation: neon-flicker 2s infinite alternate;
+        }
+        
+        @keyframes neon-flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 
+                    0 0 5px #5236cc,
+                    0 0 10px #5236cc,
+                    0 0 15px #5236cc,
+                    0 0 20px #5236cc;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* Liquid Button Effect */
+        .liquid-btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, #5236cc, #0693e3);
+        }
+        
+        .liquid-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .liquid-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Morphing Background */
+        .morphing-bg {
+            background: linear-gradient(-45deg, #1a1a1a, #2d2d2d, #1a1a1a, #333);
+            background-size: 400% 400%;
+            animation: morphing 15s ease infinite;
+        }
+        
+        @keyframes morphing {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Text Reveal Animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+        
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: textReveal 0.8s ease forwards;
+        }
+        
+        @keyframes textReveal {
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        /* 3D Card Flip */
+        .card-3d {
+            perspective: 1000px;
+        }
+        
+        .card-3d-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .card-3d:hover .card-3d-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-3d-front, .card-3d-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        
+        .card-3d-back {
+            transform: rotateY(180deg);
+        }
+        
+        /* Cursor Trail Effect */
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #5236cc, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: cursorTrail 0.3s ease-out;
+        }
+        
+        @keyframes cursorTrail {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Matrix Rain Effect */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .matrix-char {
+            position: absolute;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            animation: matrixFall linear infinite;
+        }
+        
+        @keyframes matrixFall {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -836,14 +1045,14 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content fade-in-up">
-            <h1>Ihr zuverlässiger Hausmeister-Service</h1>
-            <p>Professionelle Entrümpelung, Gartenpflege, Winterdienste und Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung mit besenfreier Übergabe.</p>
+            <h1 class="neon-glow text-reveal">Ihr zuverlässiger Hausmeister-Service</h1>
+            <p class="text-reveal">Professionelle Entrümpelung, Gartenpflege, Winterdienste und Hausmeisterdienstleistungen. Spezialisiert auf Entrümpelung mit besenfreier Übergabe.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
+                <a href="#contact" class="btn btn-primary liquid-btn magnetic">
                     <i class="fas fa-phone"></i>
                     Jetzt anrufen
                 </a>
-                <a href="#services" class="btn btn-secondary">
+                <a href="#services" class="btn btn-secondary magnetic">
                     <i class="fas fa-info-circle"></i>
                     Services ansehen
                 </a>
@@ -1422,6 +1631,109 @@
                     typeWriter(heroTitle, originalText, 50);
                 }
             }, 2000);
+        });
+        
+        // Magnetic Effect for Buttons
+        document.querySelectorAll('.magnetic').forEach(element => {
+            element.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translate(0, 0)';
+            });
+        });
+        
+        // Cursor Trail Effect
+        let cursorTrails = [];
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.7) { // Only create trail sometimes
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                document.body.appendChild(trail);
+                
+                cursorTrails.push(trail);
+                
+                setTimeout(() => {
+                    trail.remove();
+                    cursorTrails = cursorTrails.filter(t => t !== trail);
+                }, 300);
+            }
+        });
+        
+        // Matrix Rain Effect
+        function createMatrixRain() {
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const matrixContainer = document.createElement('div');
+            matrixContainer.className = 'matrix-rain';
+            document.body.appendChild(matrixContainer);
+            
+            function createMatrixColumn() {
+                const column = document.createElement('div');
+                column.style.position = 'absolute';
+                column.style.left = Math.random() * window.innerWidth + 'px';
+                column.style.top = '-50px';
+                
+                for (let i = 0; i < 20; i++) {
+                    const char = document.createElement('div');
+                    char.className = 'matrix-char';
+                    char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    char.style.animationDelay = (i * 0.1) + 's';
+                    char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    column.appendChild(char);
+                }
+                
+                matrixContainer.appendChild(column);
+                
+                setTimeout(() => {
+                    column.remove();
+                }, 5000);
+            }
+            
+            setInterval(createMatrixColumn, 200);
+        }
+        
+        // Initialize Matrix Rain (optional - can be toggled)
+        // createMatrixRain();
+        
+        // Text Reveal Animation
+        function animateTextReveal() {
+            document.querySelectorAll('.text-reveal').forEach(element => {
+                const text = element.textContent;
+                element.innerHTML = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i];
+                    span.style.animationDelay = (i * 0.05) + 's';
+                    element.appendChild(span);
+                }
+            });
+        }
+        
+        // Initialize text reveal
+        animateTextReveal();
+        
+        // Glitch Effect (on hover)
+        document.querySelectorAll('.glitch').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.animation = 'glitch-1 0.5s infinite';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.animation = 'none';
+            });
+        });
+        
+        // Morphing Background
+        document.querySelectorAll('.morphing-bg').forEach(element => {
+            element.style.animation = 'morphing 15s ease infinite';
         });
     </script>
 </body>
