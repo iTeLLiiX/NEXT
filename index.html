@@ -340,6 +340,7 @@
             border: 1px solid #e9ecef;
             position: relative;
             overflow: hidden;
+            min-height: 400px;
         }
         
         .service-card::before {
@@ -1021,10 +1022,11 @@
             height: 100%;
             backface-visibility: hidden;
             border-radius: 15px;
-            padding: 2.5rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            min-height: 400px;
         }
         
         .flip-card-front {
@@ -1039,10 +1041,11 @@
         }
         
         .flip-hint {
-            margin-top: 1rem;
+            margin-top: auto;
             font-size: 0.8rem;
             color: #666;
             opacity: 0.7;
+            padding-top: 1rem;
         }
         
         .service-details {
